@@ -11,7 +11,12 @@ int main(){
     int size;
     
     cout << "Enter the size of array: ";
-    cin >> size;
+	while (!(cin >> size) || cin.get() != '\n')
+	{
+		cin.clear();
+		cout << "Вы блондинка,вам надо написать что-то нормальное" << endl;
+		while (cin.get() != '\n');
+	}
     
     int arr[size];
     
@@ -72,5 +77,4 @@ int main(){
             cout << arr[i] << " ";
         }
     }
-    
 }
