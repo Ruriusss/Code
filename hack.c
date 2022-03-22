@@ -7,70 +7,55 @@ int main() {
     
     srand(time(NULL));
 
-    int size;
+    int size = 5;
     
-    int i, j, k, c;
+    char pass[size];
     
-    printf("Enter the size code: ");
-    scanf("%d", &size);
+    char code[size];
+    
+    char arrNum[21] = {"0123456789abcdefghijk"};
+    
+    int ch;
+    
+    int i;
 
-    int pass[size];
+    printf("Enter the code: ");
     
-    int code[size];
-    
-    int key[size];
-    
-    for (int i = 0; i < size; i++) {
-        printf("Enter %d number: ", i);
-        scanf("%d", &code[i]);
-    }
-    
+    do{
+        
+        ch = getchar();
+        code[i] = ch;
+        i++;
+        
+    }while(ch != '\n');
+        
     int ex;
     
     do{
         
         for (int i = 0; i < size; i++) {
-    
+            
             printf("\n");
             
-            int num = rand() % 10;
+            int num = rand() % 21;
+    
+            pass[i] = arrNum[num];
 
-            pass[i] = num;
         }
-        
-        
+    
         for (int i = 0; i < size; i++) {
             
-            for (int j = 1; j < size; j++) {
-                if(pass[i] == code[i]) {
-                    
-                    pass[i] == key[i];
-                    printf("%d\n", pass[i]);
-                    ex = 1;
-                    
-                }else{
-                
-                    for (int i = 0; i < size; i++) {
+            if(pass[0] == code[0] && pass[1] == code[1] && pass[2] == code[2] && pass[3] == code[3] && pass[4] == code[4]) {
+                ex = 1;
+            }      
             
-
-                        int num = rand() % 10;
-        
-                        pass[i] = num;
-                    }
-
-            }
-                    
-            }
-            
-
         }
-        
+       
+      for (int i = 0; i < size; i++) {
+          printf("%c" ,pass[i]);
+      }
             
-        for (int i = 0; i < size; i++) {
-        
-            printf("%d", pass[i]);
-        }
-        
+     
         
 
     }while(ex != 1);
